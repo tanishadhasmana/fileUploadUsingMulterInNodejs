@@ -4,6 +4,8 @@ const express = require("express");
 const multer = require("multer");
 // step 2  we also have to put a MW, as upload
 // const upload = multer({dest : "uploads/"})
+const fs = require("fs");
+
 
 // step 4 we making disk storage, which taking 2 parameters, destination(we specify, inside which folder have to save that file), and the filename
 const storage = multer.diskStorage({
@@ -19,6 +21,12 @@ const storage = multer.diskStorage({
 const upload = multer({storage});
 
 const app = express();
+
+// Ensure uploads folder exists, for render
+const uploadDir = path.join(__dirname, "uploads");
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir);
+}
 
 
 app.set("views", path.join(__dirname, "views")); // folder for ejs files
