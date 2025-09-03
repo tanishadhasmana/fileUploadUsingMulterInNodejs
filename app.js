@@ -48,7 +48,6 @@ app.post('/upload', upload.single("resume"),function(req, res){
   console.log(req.body);
   console.log(req.file);
   // then as soon as we uploded the file, we redirect again to home, *** and the folder named uploads is created, inside which we have that file --- But but, this file come with very unconvinient name, so if we want to manipulate acc. to u, we want DiskStorage, so we can save as we want
-  return res.redirect('/');
   res.send("File uploaded sucessfully!");
 })
 
