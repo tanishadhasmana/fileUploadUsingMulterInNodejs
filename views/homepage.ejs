@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uploading File In UI</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+  <div class="bg-white shadow-lg rounded-lg p-8 max-w-md w-full">
+    <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Upload Your Resume</h2>
+    <!-- in form we have to specify the action, like though which route it will execute, and method aslo, and ** have to add enctype="multipart/form-data so file could be uploaded"-->
+    <form action="/upload" method="POST" enctype="multipart/form-data" class="space-y-6">
+      <div>
+        <label class="block text-gray-700 font-medium mb-2" for="resume">Select File</label>
+        <input type="file" name="resume" id="resume" class="block w-full text-gray-700 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+      <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-2 rounded-lg hover:bg-blue-700 transition">Upload</button>
+    </form>
+  </div>
+</body>
+</html>
